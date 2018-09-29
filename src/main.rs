@@ -2,14 +2,23 @@
 #![plugin(rocket_codegen)]
 
 extern crate rocket;
-mod rest_api;
+#[macro_use] extern crate rocket_contrib;
+extern crate serde_derive;
+
+
+use rocket_contrib::Template;
+
+mod api;
+mod webui;
 
 fn rocket() -> rocket::Rocket {
     rocket::ignite()
-        .mount("/", routes![rest_api::version])
+        .attach(Template::fairing())
+        .mount("/", routes![webui::index])
+        .mount("/api/", routes![api::version])
 }
 
 fn main() {
-    println!("camrem_core_server with api v{}", rest_api::VERSION.unwrap_or("unknown"));
+    println!("camrem_core_server with api v{}", api::VERSION.unwrap_or("unknown"));
     rocket().launch();
 }

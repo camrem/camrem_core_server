@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Camrem Webui</title>
+</head>
+<body>
+    <h1>Camrem Dummy UI - v{{ camrem_version }}</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat sapien eget purus imperdiet placerat. Donec finibus libero est, vel suscipit erat congue eget. Vivamus a pellentesque velit, vitae porttitor metus. Curabitur ut blandit dolor. Sed commodo tortor imperdiet auctor lacinia. Nulla a consequat odio. Cras tempus ipsum nec sapien egestas posuere. Suspendisse lacus dui, pellentesque in justo et, accumsan rhoncus lectus. Curabitur non ligula id metus pulvinar consequat. Sed non varius dolor, ut ullamcorper tellus. Nulla quam mauris, pellentesque sed felis sed, gravida cursus augue. Praesent porta mauris sed justo tempus, et commodo quam dignissim. Suspendisse elementum, erat ac consectetur tincidunt, tortor tortor gravida augue, sit amet cursus lectus ligula ut tortor. Curabitur nec auctor dolor, sit amet malesuada massa. Vestibulum tristique feugiat mollis.</p>
+</body>
+</html>
