@@ -7,9 +7,15 @@ pub fn version() -> &'static str {
 
 
 #[cfg(test)]
-mod tests {
+mod test {
+    use super::super::rocket;
+    use rocket::local::Client;
+    use rocket::http::Status;
+
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn version() {
+        let client = Client::new(rocket()).expect("valid rocket instance");
+        let response = client.get("/version").dispatch();
+        assert_eq!(response.status(), Status::Ok);
     }
 }
