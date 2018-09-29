@@ -17,7 +17,7 @@ mod test {
     #[test]
     fn version() {
         let client = Client::new(rocket()).expect("valid rocket instance");
-        let response = client.get("/version").dispatch();
+        let response = client.get("/api/version").dispatch();
         assert_eq!(response.status(), Status::Ok);
     }
 }
