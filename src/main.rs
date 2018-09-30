@@ -12,10 +12,12 @@ mod api;
 mod webui;
 
 fn rocket() -> rocket::Rocket {
-    rocket::ignite()
-        .attach(Template::fairing())
-        .mount("/", routes![webui::index])
-        .mount("/api/", routes![api::version])
+    let r = rocket::ignite()
+        .attach(Template::fairing());
+    let r = webui::mount(r);
+    let r = api::mount(r);
+
+    return r
 }
 
 fn main() {
