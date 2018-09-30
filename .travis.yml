@@ -8,6 +8,7 @@ rust:
 addons:
   apt:
     packages:
+    - libgphoto2-dev
     - libcurl4-openssl-dev
     - libelf-dev
     - libdw-dev

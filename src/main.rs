@@ -1,6 +1,7 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
 
+extern crate gphoto;
 extern crate rocket;
 #[macro_use] extern crate rocket_contrib;
 extern crate serde_derive;
@@ -10,6 +11,7 @@ use rocket_contrib::Template;
 
 mod api;
 mod webui;
+mod camera;
 
 fn rocket() -> rocket::Rocket {
     let r = rocket::ignite()
