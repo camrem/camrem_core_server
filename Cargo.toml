@@ -1,9 +1,11 @@
+cargo-features = ["edition"]
+
 [package]
 name = "camrem_core_server"
 version = "0.0.1"
 authors = ["Christopher Schmidt <christopher.schmidt@posteo.de>"]
 edition = "2018"
-cargo-features = ["edition"]
+
 
 [dependencies]
 log = "0.4.5"

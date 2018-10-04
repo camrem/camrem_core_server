@@ -1,6 +1,6 @@
 use std::thread;
 use std::time::Duration;
-use std::collections::{HashMap, VecDeque};
+use std::collections::VecDeque;
 use std::sync::{Arc, Mutex};
 use gphoto as gp;
 
