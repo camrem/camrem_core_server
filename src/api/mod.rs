@@ -1,11 +1,12 @@
 pub const VERSION: Option<&'static str> = option_env!("CARGO_PKG_VERSION");
 
 use rocket;
+use rocket::State;
 use rocket_contrib::{Json, Value};
 use gphoto as gp;
 
 pub fn mount(r: rocket::Rocket) -> rocket::Rocket {
-    r.mount("/api/", routes![version])
+    r.mount("/api/", routes![version, camera_sleep])
 }
 
 #[get("/version")]
@@ -21,6 +22,12 @@ pub fn version() -> Json<Value> {
                     "exif": version.exif()
                   }
                 }))
+}
+
+#[get("/camera/sleep")]
+pub fn camera_sleep(state: State<super::camera::CameraHandler>) -> Json<Value> {
+    state.sleep_from_secs(5);
+    Json(json!({"status": "success"}))
 }
 
 
