@@ -1,17 +1,16 @@
 #![feature(plugin)]
-#![plugin(rocket_codegen)]
+#![feature(proc_macro_hygiene, decl_macro)]
 
 #[macro_use]
 extern crate log;
 extern crate pretty_env_logger;
 
 extern crate gphoto;
-extern crate rocket;
+#[macro_use] extern crate rocket;
 #[macro_use] extern crate rocket_contrib;
 extern crate serde_derive;
 
-
-use rocket_contrib::Template;
+use rocket_contrib::templates::Template;
 
 mod api;
 mod webui;
