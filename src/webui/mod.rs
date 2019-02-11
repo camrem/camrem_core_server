@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use rocket_contrib::Template;
+use rocket_contrib::templates::Template;
 
 use super::api;
 use rocket;
